@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+
+{% block title %}
+Tickets - TriageDesk
+{% endblock %}
+
+{% block heading %}
+Tickets
+{% endblock %}
+
+{% block content %}
+
+<section class="page-toolbar">
+
+    <div>
+
+        <h2>
+            Support Tickets
+        </h2>
+
+        <p>
+            Review and manage IT incidents.
+        </p>
+
+    </div>
+
+    <button
+        class="primary-btn"
+        onclick="openTicketModal()"
+    >
+        + Create Ticket
+    </button>
+
+</section>
+
+
+<section class="panel">
+
+    <div class="filters">
+
+        <input
+            id="ticketSearch"
+            type="text"
+            placeholder="Search ticket, user, issue..."
+        >
+
+        <select id="ticketStatusFilter">
+
+            <option value="all">
+                All Statuses
+            </option>
+
+            <option value="open">
+                Open
+            </option>
+
+            <option value="in-progress">
+                In Progress
+            </option>
+
+            <option value="resolved">
+                Resolved
+            </option>
+
+        </select>
+
+
+        <select id="ticketPriorityFilter">
+
+            <option value="all">
+                All Priorities
+            </option>
+
+            <option value="critical">
+                Critical
+            </option>
+
+            <option value="high">
+                High
+            </option>
+
+            <option value="medium">
+                Medium
+            </option>
+
+            <option value="low">
+                Low
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Ticket</th>
+                    <th>User</th>
+                    <th>Issue</th>
+                    <th>Department</th>
+                    <th>Priority</th>
+                    <th>Technician</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="ticketTable">
+
+                <tr>
+
+                    <td colspan="7">
+                        Loading tickets...
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<div
+    id="ticketModal"
+    class="modal hidden"
+>
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    NEW INCIDENT
+                </p>
+
+                <h3>
+                    Create Ticket
+                </h3>
+
+            </div>
+
+            <button
+                class="close-btn"
+                onclick="closeTicketModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="ticketForm">
+
+            <label>
+                User
+            </label>
+
+            <input
+                id="ticketUser"
+                required
+                placeholder="Example: Sara Ali"
+            >
+
+
+            <label>
+                Department
+            </label>
+
+            <input
+                id="ticketDepartment"
+                required
+                placeholder="Example: Finance"
+            >
+
+
+            <label>
+                Issue
+            </label>
+
+            <textarea
+                id="ticketIssue"
+                required
+                placeholder="Describe the issue..."
+            ></textarea>
+
+
+            <label>
+                Priority
+            </label>
+
+            <select id="ticketPriority">
+
+                <option value="medium">
+                    Medium
+                </option>
+
+                <option value="high">
+                    High
+                </option>
+
+                <option value="critical">
+                    Critical
+                </option>
+
+                <option value="low">
+                    Low
+                </option>
+
+            </select>
+
+
+            <label>
+                Technician
+            </label>
+
+            <input
+                id="ticketTechnician"
+                placeholder="Example: Ibrahim"
+            >
+
+
+            <button
+                type="submit"
+                class="primary-btn full-width"
+            >
+                Create Ticket
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

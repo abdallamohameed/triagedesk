@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block title %}
+System Status - TriageDesk
+{% endblock %}
+
+{% block heading %}
+System Status
+{% endblock %}
+
+{% block content %}
+<script>
+    window.TRIAGEDESK.statusApi = "{{ status_api }}";
+</script>
+<section class="page-toolbar">
+
+    <div>
+
+        <h2>
+            Platform Health
+        </h2>
+
+        <p>
+            Current health and runtime information
+            for TriageDesk services.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="status-grid">
+
+    <div class="panel status-card">
+
+        <div class="status-icon">
+            ●
+        </div>
+
+        <div>
+
+            <span>
+                Portal
+            </span>
+
+            <strong>
+                Operational
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="panel status-card">
+
+        <div
+            class="status-icon"
+            id="coreStatusIcon"
+        >
+            ●
+        </div>
+
+        <div>
+
+            <span>
+                Core API
+            </span>
+
+            <strong id="coreStatus">
+                Checking...
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="panel status-card">
+
+        <div
+            class="status-icon"
+            id="runtimeStatusIcon"
+        >
+            ●
+        </div>
+
+        <div>
+
+            <span>
+                Status Service
+            </span>
+
+            <strong id="runtimeStatus">
+                Checking...
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="panel details-card runtime-panel">
+
+    <h3>
+        Runtime Information
+    </h3>
+
+
+    <div class="detail-row">
+
+        <span>
+            Application
+        </span>
+
+        <strong id="runtimeApplication">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="detail-row">
+
+        <span>
+            Hostname
+        </span>
+
+        <strong id="runtimeHostname">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="detail-row">
+
+        <span>
+            Operating System
+        </span>
+
+        <strong id="runtimePlatform">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="detail-row">
+
+        <span>
+            Environment
+        </span>
+
+        <strong id="runtimeEnvironment">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="detail-row">
+
+        <span>
+            Application Version
+        </span>
+
+        <strong id="runtimeVersion">
+            -
+        </strong>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}TriageDesk{% endblock %}</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-mark">T</div>
+
+            <div>
+                <h2>TriageDesk</h2>
+                <span>IT Operations</span>
+            </div>
+        </div>
+
+        <nav>
+
+            <a href="/" class="nav-item">
+                <span>▣</span>
+                Dashboard
+            </a>
+
+            <a href="/tickets" class="nav-item">
+                <span>◫</span>
+                Tickets
+            </a>
+
+            <a href="/assets" class="nav-item">
+                <span>▤</span>
+                Assets
+            </a>
+            <a href="/status" class="nav-item">
+    <span>●</span>
+    System Status
+</a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <span class="status-dot"></span>
+
+            <div>
+                <strong>Core API</strong>
+                <small>Connected locally</small>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="eyebrow">
+                    IT SERVICE OPERATIONS
+                </p>
+
+                <h1>
+                    {% block heading %}
+                    TriageDesk
+                    {% endblock %}
+                </h1>
+
+            </div>
+
+            <div class="user-chip">
+
+                <div class="avatar">
+                    IT
+                </div>
+
+                <div>
+                    <strong>IT Support</strong>
+                    <small>Local Environment</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="page-content">
+
+            {% block content %}
+            {% endblock %}
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+    window.TRIAGEDESK = {
+    coreApi: "{{ core_api }}",
+    statusApi: "{{ status_api }}"
+};
+</script>
+
+<script
+    src="{{ url_for('static', filename='js/app.js') }}"
+></script>
+
+{% block scripts %}
+{% endblock %}
+
+</body>
+
+</html>

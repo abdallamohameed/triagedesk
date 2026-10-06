@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Asset Details - TriageDesk
+{% endblock %}
+
+{% block heading %}
+Asset Details
+{% endblock %}
+
+{% block content %}
+
+<div
+    id="assetDetails"
+    data-asset-id="{{ asset_id }}"
+>
+
+    <div class="details-loading">
+        Loading asset...
+    </div>
+
+</div>
+
+{% endblock %}

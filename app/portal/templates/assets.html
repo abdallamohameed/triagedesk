@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}
+Assets - TriageDesk
+{% endblock %}
+
+{% block heading %}
+Assets
+{% endblock %}
+
+{% block content %}
+
+<section class="page-toolbar">
+
+    <div>
+
+        <h2>
+            Managed Assets
+        </h2>
+
+        <p>
+            Inventory of company devices and servers.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="panel">
+
+    <div class="filters">
+
+        <input
+            id="assetSearch"
+            type="text"
+            placeholder="Search asset, hostname, user..."
+        >
+
+        <select id="assetStatusFilter">
+
+            <option value="all">
+                All Statuses
+            </option>
+
+            <option value="online">
+                Online
+            </option>
+
+            <option value="offline">
+                Offline
+            </option>
+
+        </select>
+
+        <select id="assetTypeFilter">
+
+            <option value="all">
+                All Types
+            </option>
+
+            <option value="Laptop">
+                Laptop
+            </option>
+
+            <option value="Desktop">
+                Desktop
+            </option>
+
+            <option value="Server">
+                Server
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Asset</th>
+                    <th>Hostname</th>
+                    <th>User</th>
+                    <th>Type</th>
+                    <th>OS</th>
+                    <th>IP Address</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="assetTable">
+
+                <tr>
+                    <td colspan="8">
+                        Loading assets...
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+{% endblock %}

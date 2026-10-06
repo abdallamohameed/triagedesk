@@ -1,0 +1,13 @@
+.env
+
+__pycache__/
+*.pyc
+
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
+# Database backups
+triagedesk_backup.sql
+*_backup.sql

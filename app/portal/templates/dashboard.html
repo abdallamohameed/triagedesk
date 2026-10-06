@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard - TriageDesk
+{% endblock %}
+
+{% block heading %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<section class="welcome-card">
+
+    <div>
+
+        <p class="eyebrow">
+            SUPPORT OVERVIEW
+        </p>
+
+        <h2>
+            IT operations at a glance
+        </h2>
+
+        <p>
+            Monitor active incidents, ticket workload,
+            and managed company assets.
+        </p>
+
+    </div>
+
+    <a href="/tickets" class="primary-btn">
+        View Tickets
+    </a>
+
+</section>
+
+
+<section class="stats-grid">
+
+    <div class="stat-card">
+
+        <span>
+            Open Tickets
+        </span>
+
+        <strong id="openTickets">
+            -
+        </strong>
+
+        <small>
+            Awaiting action
+        </small>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <span>
+            Critical
+        </span>
+
+        <strong id="criticalTickets">
+            -
+        </strong>
+
+        <small>
+            High priority incidents
+        </small>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <span>
+            Resolved
+        </span>
+
+        <strong id="resolvedTickets">
+            -
+        </strong>
+
+        <small>
+            Closed incidents
+        </small>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <span>
+            Managed Assets
+        </span>
+
+        <strong id="assetCount">
+            -
+        </strong>
+
+        <small>
+            Registered devices
+        </small>
+
+    </div>
+
+</section>
+
+
+<section class="content-grid">
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h3>Recent Tickets</h3>
+
+                <p>
+                    Latest support incidents
+                </p>
+            </div>
+
+            <a href="/tickets" class="text-link">
+                View all
+            </a>
+
+        </div>
+
+
+        <div
+            id="recentTickets"
+            class="ticket-list"
+        >
+
+            Loading tickets...
+
+        </div>
+
+    </div>
+
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <h3>
+                    Asset Health
+                </h3>
+
+                <p>
+                    Device availability
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="asset-health">
+
+            <div>
+
+                <span class="health-label">
+                    Online
+                </span>
+
+                <strong id="onlineAssets">
+                    -
+                </strong>
+
+            </div>
+
+            <div>
+
+                <span class="health-label">
+                    Offline
+                </span>
+
+                <strong id="offlineAssets">
+                    -
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

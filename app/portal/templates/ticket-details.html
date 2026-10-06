@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Ticket Details - TriageDesk
+{% endblock %}
+
+{% block heading %}
+Ticket Details
+{% endblock %}
+
+{% block content %}
+
+<div
+    id="ticketDetails"
+    data-ticket-id="{{ ticket_id }}"
+>
+
+    <div class="details-loading">
+        Loading ticket...
+    </div>
+
+</div>
+
+{% endblock %}
