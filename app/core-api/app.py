@@ -328,7 +328,7 @@ def health():
             "status": "ok",
             "service": "core-api",
             "instance": os.getenv("EC2_INSTANCE_ID", "local"),
-            "instance": socket.gethostname(),
+            "container": socket.gethostname(),
             "database": "connected",
             "tickets": ticket_count,
             "assets": asset_count
