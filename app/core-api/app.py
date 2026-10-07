@@ -312,6 +312,7 @@ def get_asset(asset_id):
 
 
 @app.route("/health")
+@app.route("/api/core-health")
 def health():
     try:
         with get_db_connection() as conn:
