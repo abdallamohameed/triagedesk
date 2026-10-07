@@ -327,6 +327,7 @@ def health():
         return jsonify({
             "status": "ok",
             "service": "core-api",
+            "instance": os.getenv("EC2_INSTANCE_ID", "local"),
             "instance": socket.gethostname(),
             "database": "connected",
             "tickets": ticket_count,
